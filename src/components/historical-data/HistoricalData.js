@@ -34,12 +34,12 @@ const HistoricalData = () => {
   }, [slideId]);
 
   return (
-    <div className="flex w-11/12 mx-auto my-4 bg-cyan-50">
+    <div className="flex flex-col md:flex-row w-11/12 mx-auto my-4 bg-cyan-50">
       <MonumentsMap
         monumentLong={historicalMonuments[slideId].long_lat}
         monumentName={historicalMonuments[slideId].title}
       />
-      <div className="w-[60%] pr-5 py-4 rounded-lg">
+      <div className="w-full md:w-[60%] md:pr-5 py-4 rounded-lg">
         <Swiper
           initialSlide={slideId}
           modules={[Navigation]}
@@ -62,7 +62,7 @@ const HistoricalData = () => {
                     <img
                       src={data.image}
                       alt="Monument Image"
-                      className="w-[40%]"
+                      className="w-full mb-10"
                     />
                     <p className="py-2">{data.description}</p>
                   </div>
